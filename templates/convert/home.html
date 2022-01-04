@@ -1,0 +1,24 @@
+{% extends 'convert/base.html' %}
+{% load static %}
+{% block page %}
+    <title>MP3 to MP4 Converter</title>
+{% endblock %}
+{% block content %}
+    <br>
+    <main class="px-1">
+        <div class="container">
+            <h1>Yoo Converter</h1>
+            <h3>Local MP4 to MP3 Converter</h4>
+            <h5 class="text-muted mb-5">Converts any MP4 video in your local machine to MP3</h6>
+            <div class="row justify-content-center">
+                <form action="{% url 'convert' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="input-group input-group-lg mb-3">
+                        <input type="text" class="form-control" placeholder="Enter video url" name="url" aria-label="Text input with dropdown button" />
+                        <input type="submit" class="btn btn-primary" value="Download" aria-expanded="false">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}
